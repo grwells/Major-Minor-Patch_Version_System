@@ -8,6 +8,7 @@ The system consists of three parts:
     * `mmp_release:major`: increments like v0.3.5620 -> v1.0.0
     * `mmp_release:minor`: increments like v0.3.5620 -> v0.4.0
     * `mmp_release:patch`: increments like v0.3.5620 -> v0.3.5621
+    * `mmp_release:manual`: user is prompted to enter major, minor, and patch version numbers by hand and these are used to overwrite the previous version number.
 
 2. `platformio.ini` where `mmp_version_system.ini` is included in the `[platformio]` section as an `extra_configs` argument, thereby including its contents for usage in user defined environments.
     
