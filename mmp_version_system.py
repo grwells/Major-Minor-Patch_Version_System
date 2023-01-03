@@ -16,6 +16,16 @@ import os
 from datetime import datetime, timezone
 from os import path
 
+def print_title():
+    print((
+     " __  __ __  __ _____   __      __           _             \n" +
+     "|  \/  |  \/  |  __ \  \ \    / /          (_)            \n" + 
+     "| \  / | \  / | |__) |  \ \  / /__ _ __ ___ _  ___  _ __  \n" + 
+     "| |\/| | |\/| |  ___/    \ \/ / _ \ '__/ __| |/ _ \| '_ \ \n" + 
+     "| |  | | |  | | |         \  /  __/ |  \__ \ | (_) | | | |\n" + 
+     "|_|  |_|_|  |_|_|          \/ \___|_|  |___/_|\___/|_| |_|\n"))
+                                                           
+
 Import("env")
 output_prefix = env.GetProjectOption("custom_fw_prefix")
 
@@ -23,12 +33,15 @@ if env.IsIntegrationDump():
     # stop the current script execution
     Return()
 
+print_title()
 print("\nMajor - Minor - Patch(MMP) Version System")
 print("\t[AUTHOR] grwells\n\t[VERSION] v0.1.0")
 
 vmajor = 0
 vminor = 0 
 vpatch = 0 
+
+
 
 
 def prompt_for_version():
@@ -96,6 +109,8 @@ def read_version():
     file.close()
     print(f'\t\textracted current version v{vmajor}.{vminor}.{vpatch} from version.h')
     return vmajor, vminor, vpatch
+
+
 
 # check if version.h exists
 if path.exists('./include/version.h'):
